@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>🌾 Crop Recommendation System</h1>
+            <form method="POST" action="/predict">
+                {% for field in ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall'] %}
+                    <input type="number" step="any" name="{{ field }}" placeholder="{{ field | capitalize }}" required><br>
+                {% endfor %}
+                <button type="submit">Predict Crop</button>
+            </form>
+            {% if prediction_text %}
+                <div class="output">{{ prediction_text }}</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
