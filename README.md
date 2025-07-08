@@ -66,7 +66,9 @@ This project uses supervised learning (Random Forest, Decision Tree, etc.) to he
   
 
 
-## 📷 Screenshots
+## PROJECT LINK
+https://croprecomendationsystem-naveen.streamlit.app/
+
 
 *Add screenshots of your UI here.*
 
