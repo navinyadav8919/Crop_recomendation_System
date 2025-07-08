@@ -99,16 +99,5 @@ Crop_recommendation_System/
 
 This project is licensed under the MIT License.
 
-### ✅ To Add It:
 
-1. Create the file in VS Code:bash
-code README.md
-
-
-2. Paste the content above.
-3. Save and push to GitHub:
-
-git add README.md
-git commit -m "Added README"
-git push origin main
 
