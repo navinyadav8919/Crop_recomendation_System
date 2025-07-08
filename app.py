@@ -1,24 +1,24 @@
-
-from flask import Flask, render_template, request
+import streamlit as st
 import pickle
 import numpy as np
 
-app = Flask(__name__)
+# Load the model
 model = pickle.load(open('crop_model.pkl', 'rb'))
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+st.title("🌾 Crop Recommendation System")
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    try:
-        features = [float(request.form.get(i)) for i in ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']]
-        prediction = model.predict([np.array(features)])
-        result = f"✅ Recommended Crop: {prediction[0].capitalize()}"
-    except Exception as e:
-        result = f"❌ Error: {str(e)}"
-    return render_template('index.html', prediction_text=result)
+st.markdown("Enter the soil and environmental conditions below:")
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Input fields
+N = st.number_input('Nitrogen (N)', min_value=0)
+P = st.number_input('Phosphorus (P)', min_value=0)
+K = st.number_input('Potassium (K)', min_value=0)
+temperature = st.number_input('Temperature (°C)')
+humidity = st.number_input('Humidity (%)')
+ph = st.number_input('pH', min_value=0.0, max_value=14.0, step=0.1)
+rainfall = st.number_input('Rainfall (mm)', min_value=0.0)
+
+if st.button('Predict Crop'):
+    input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+    prediction = model.predict(input_data)[0]
+    st.success(f"✅ Recommended Crop: **{prediction.upper()}**")
