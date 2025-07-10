@@ -75,7 +75,7 @@ https://croprecomendationsystem-naveen.streamlit.app/
 * Accuracy: **95+%** on test data using Random Forest
 * Evaluated with confusion matrix and classification report
 * Feature importance and heatmaps for insights
-
+---
 ## 📁 Project Structure
 
 Crop_recommendation_System/
@@ -87,6 +87,8 @@ Crop_recommendation_System/
 ├── model.pkl
 ├── requirements.txt
 └── README.md
+---
+
 
 # 🙋‍♂️ Author
 
