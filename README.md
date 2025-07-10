@@ -70,8 +70,6 @@ This project uses supervised learning (Random Forest, Decision Tree, etc.) to he
 https://croprecomendationsystem-naveen.streamlit.app/
 
 
-*Add screenshots of your UI here.*
-
 ## ✅ Results
 
 * Accuracy: **95+%** on test data using Random Forest
