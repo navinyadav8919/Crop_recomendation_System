@@ -122,8 +122,3 @@ Crop_recommendation_System/
 
 This project is licensed under the [MIT License](LICENSE).
 
-
----
-
-✅ You're ready to copy-paste this into your `README.md` file. Let me know if you’d like badges (like `Made with Flask`, `Deployed on Streamlit`, etc.) or help adding screenshots!
-```
